@@ -1,9 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-
-
-
 const Drugs = () => {
   const [drugs, setDrugs] = useState([]);
   useEffect(() => {
@@ -21,6 +18,7 @@ const Drugs = () => {
   };
   return (
     <div>
+      <div>fewrferferg</div>
       {drugs.map((item, index) => (
         <div key={index}>
           <img alt="" src={item.image} />

@@ -55,6 +55,9 @@ export const Wrapper = styled.div`
   justify-content: center;
 `;
 export const BodyWrapper = styled.div`
+  display: flex;
+  overflow-y: scroll;
+  overflow-x: hidden;
   margin-left: auto;
   margin-right: 70px;
   display: flex;
