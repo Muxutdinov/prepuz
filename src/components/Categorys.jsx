@@ -1,12 +1,6 @@
-// import Navigation from "./sections/Navication";
-
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./Categorys.css";
-import rasm1 from "../assets/imgs/rasm1.png";
-import rasm2 from "../assets/imgs/rasm2.png";
-import rasm3 from "../assets/imgs/rasm3.png";
-import rasm4 from "../assets/imgs/rasm4.png";
 import axios from "axios";
 
 import {
@@ -95,32 +89,6 @@ const Categories = () => {
             </NavLink>
           </SidebarWrapper>
           <BodyWrapper>
-            <BodyCard>
-              {first.map((value, index) => (
-                <Card key={index}>
-                  <ImgWrapper>
-                    <Img1 src={value.image} alt="rasm"></Img1>
-                  </ImgWrapper>
-                  <TitleWrapper>
-                    <MiniText>{value.name}</MiniText>
-                    <Title>{value.category.name}</Title>
-                  </TitleWrapper>
-                </Card>
-              ))}
-            </BodyCard>
-            <BodyCard>
-              {first.map((value, index) => (
-                <Card key={index}>
-                  <ImgWrapper>
-                    <Img1 src={value.image} alt="rasm"></Img1>
-                  </ImgWrapper>
-                  <TitleWrapper>
-                    <MiniText>{value.name}</MiniText>
-                    <Title>{value.category.name}</Title>
-                  </TitleWrapper>
-                </Card>
-              ))}
-            </BodyCard>
             <BodyCard>
               {first.map((value, index) => (
                 <Card key={index}>

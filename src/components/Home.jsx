@@ -1,25 +1,25 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { useState } from "react";
+// import { Link } from "react-router-dom";
 import Navigation from "./sections/Navication";
 
 const Home = () => {
-  const [first, setFirst] = useState("");
-  const [second, setSecond] = useState("");
-  const [third, setThird] = useState("");
-  const [yechims, setYechims] = useState(0);
+  // const [first, setFirst] = useState("");
+  // const [second, setSecond] = useState("");
+  // const [third, setThird] = useState("");
+  // const [yechims, setYechims] = useState(0);
 
-  const Fancfirst = (e) => {
-    setFirst(e.target.value);
-  };
-  const FancSecond = (e) => {
-    setSecond(e.target.value);
-  };
-  const FancThird = (e) => {
-    setThird(e.target.value);
-  };
-  const yechim = () => {
-    let Data = +parseInt(first) + parseInt(second) + parseInt(third);
-  };
+  // const Fancfirst = (e) => {
+  //   setFirst(e.target.value);
+  // };
+  // const FancSecond = (e) => {
+  //   setSecond(e.target.value);
+  // };
+  // const FancThird = (e) => {
+  //   setThird(e.target.value);
+  // };
+  // const yechim = () => {
+  //   let Data = +parseInt(first) + parseInt(second) + parseInt(third);
+  // };
   return (
     <>
       {/* <div> */}

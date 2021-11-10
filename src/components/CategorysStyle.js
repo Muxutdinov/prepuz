@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { ReactComponent as sahifa } from "../assets/icons/sahifa.svg";
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   background: #e5e5e5;
 `;
 export const Top = styled.div`
@@ -56,22 +57,21 @@ export const Wrapper = styled.div`
 `;
 export const BodyWrapper = styled.div`
   display: flex;
-  overflow-y: scroll;
-  overflow-x: hidden;
   margin-left: auto;
   margin-right: 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 20px;
-  height: 600px;
+  height: fit-content;
   width: 850px;
   background: rgba(255, 255, 255, 1);
   border-radius: 20px;
 `;
 export const BodyCard = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   height: 100%;
   width: 100%;
 `;
@@ -80,7 +80,7 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 10px;
+  margin: 10px auto;
   height: 250px;
   width: 250px;
   background: #f3f4f6;
@@ -91,7 +91,6 @@ export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  /* justify-content: center; */
   align-items: center;
   width: 100%;
   height: 60px;
@@ -134,7 +133,8 @@ export const ImgWrapper = styled.div`
   height: 100px;
 `;
 export const SidebarWrapper = styled.div`
-  margin-left: 215px;
+  position: fixed;
+  margin-right : 750px;
   margin-top: 70px;
   height: 300px;
   width: 170px;
