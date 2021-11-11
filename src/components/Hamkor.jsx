@@ -21,7 +21,7 @@ const Hamkor = () => {
   const getAxios = () => {
     axios
       .get("https://api.akpharm.uz/api/v1/manufacturer-list/?page=1&lan=uz")
-      .then((res) => console.log(res.data.results))
+      .then((res) => setSecond(res.data.results))
       .catch((err) => console.log(err));
   };
   return (
@@ -31,10 +31,17 @@ const Hamkor = () => {
         <img src={icon} />
         <Text>Hamkorlarimiz</Text>
       </Top>
-        <CardWrapper >
-          <Card>
-          </Card>
-        </CardWrapper>
+      <div className="Container">
+        {/* <CardWrapper> */}
+          {second.map((value, index) => {
+            return (
+              <div key={index} className="Card">
+                <Img src={value.logo} />
+              </div>
+            );
+          })}
+        {/* </CardWrapper> */}
+      </div>
     </Container>
   );
 };

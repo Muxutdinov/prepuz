@@ -39,21 +39,24 @@ export const Text = styled.div`
   margin: 0px 8px;
 `;
 export const CardWrapper = styled.div`
+  border: 1px solid red;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   margin-top: 40px;
-  width: 1000px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   background: transparent;
 `;
 
 export const Card = styled.div`
+  margin-top: 20px;
   height: 120px;
   width: 200px;
-  background: #ffffff;
+  /* background: #ffffff; */
+  background-color: gray;
   border-radius: 27.4451px;
   display: flex;
   justify-content: center;
@@ -64,6 +67,6 @@ export const CardText = styled.div`
   height: 20px;
 `;
 export const Img = styled.img`
-  height: 100px;
-  width: 100px;
+  height: 20%;
+  width: 20%;
 `;
