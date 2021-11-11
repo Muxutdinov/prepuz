@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+  export const Container = styled.div`
   height: 100vh;
   background: #e5e5e5;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
+  `
 export const Top = styled.div`
   margin-right: auto;
   display: flex;
@@ -67,6 +67,6 @@ export const CardText = styled.div`
   height: 20px;
 `;
 export const Img = styled.img`
-  height: 20%;
-  width: 20%;
+  /* height: 40%; */
+  width: 40%;
 `;

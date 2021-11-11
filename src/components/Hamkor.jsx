@@ -25,7 +25,7 @@ const Hamkor = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <Container>
+    <div className="BigContainer">
       <Top>
         <Title>Asosiy sahifa</Title>
         <img src={icon} />
@@ -42,7 +42,7 @@ const Hamkor = () => {
           })}
         {/* </CardWrapper> */}
       </div>
-    </Container>
+    </div>
   );
 };
 
