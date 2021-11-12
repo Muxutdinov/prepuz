@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Hamkor.css";
 import icon from "../assets/icons/sahifa.svg";
@@ -33,13 +34,15 @@ const Hamkor = () => {
       </Top>
       <div className="Container">
         {/* <CardWrapper> */}
-          {second.map((value, index) => {
-            return (
+        {second.map((value, index) => {
+          return (
+            <Link to="/partners/item">
               <div key={index} className="Card">
                 <Img src={value.logo} />
               </div>
-            );
-          })}
+            </Link>
+          );
+        })}
         {/* </CardWrapper> */}
       </div>
     </div>
