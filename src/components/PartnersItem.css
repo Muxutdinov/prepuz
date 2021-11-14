@@ -1,0 +1,164 @@
+.Container {
+  padding: 100px;
+  margin-top: auto;
+  height: 100vh;
+  width: 100%;
+  background: #e5e5e5;
+}
+.Top {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.item1 {
+  width: 100px;
+  height: 18px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 100%;
+  color: #1f2022;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 8px;
+}
+.item2 {
+  width: 110px;
+  height: 18px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 100%;
+  color: #1f2022;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 8px;
+}
+.item3 {
+  width: 150px;
+  height: 18px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 100%;
+  color: #70798b;
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+  margin: 0px 8px;
+}
+.Wrapper {
+  height: 100vh;
+  margin-bottom: auto;
+  /* padding-left: 100px; */
+  width: 100%;
+  background-color: transparent;
+}
+.Body {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 500px;
+  /* background-color: green; */
+}
+.left {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* background-color: greenyellow; */
+  flex: 2;
+}
+.Cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 274px;
+  height: 274px;
+  background: #ffffff;
+  border-radius: 27.4451px;
+}
+.right {
+  flex: 5;
+  /* background-color: green; */
+}
+.Title {
+  width: 280px;
+  height: 57px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 57px;
+  color: #011a61;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 16px 0px;
+}
+.Text {
+  width: 871px;
+  height: 76px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 160%;
+  color: #70798b;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.ButtonWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: fit-content;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid red;
+  margin-bottom: 200px;
+}
+.BtnTitle {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 500px;
+  height: 57px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 57px;
+  color: #011a61;
+}
+.BtnCard {
+  width: 200px;
+  height: 150px;
+  /* background: #ffffff; */
+  background: yellow;
+  box-shadow: 16px 24px 24px rgba(200, 200, 200, 0.05);
+  border-radius: 12px;
+}
+.CardImg,
+.CardImgs {
+ width: 50px;
+ background-color: transparent; 
+}
+.ImgWrapper{
+  height: auto;
+  width: 100px;
+  overflow: hidden;
+  border: 1px solid red;
+}
+.BtnCardWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
