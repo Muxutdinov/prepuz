@@ -6,6 +6,7 @@ import icon from "../assets/icons/sahifa.svg";
 const PartnersItem = () => {
   const [third, setThird] = useState([]);
   const [thirds, setThirds] = useState([]);
+  const [loading_pro, setLoading_pro] = useState(false);
   useEffect(() => {
     getThird();
     getThirds();
@@ -20,12 +21,19 @@ const PartnersItem = () => {
       .catch((err) => console.log(err));
   };
   const getThirds = () => {
+    setLoading_pro(true);
     axios
       .get(
         "https://api.akpharm.uz/api/v1/drug-list/?page=1&manufacturer=hebu_medical&lan=uz"
       )
-      .then((res) => setThirds(res.data.results))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setThirds(res.data.results);
+        setLoading_pro(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading_pro(false);
+      });
   };
   return (
     <>
@@ -41,31 +49,58 @@ const PartnersItem = () => {
           <div className="Body">
             <div className="left">
               <div className="Cards">
-                <img src={third.logo} alt="Rasm" className="CardImg" />
+                <img
+                  src={third.logo}
+                  alt="Rasm"
+                  width="60%"
+                  className="CardImg"
+                />
               </div>
             </div>
             <div className="right">
-              <div className="Title">{third.name}</div>
-              {/* <div className="Text">{value}</div> */}
+              <div className="Title">
+                {third.name ? third.name : <h1>Loading...</h1>}
+                <div className="Text">
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: third.description,
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div className="BtnTitle">Kompaniya mahsulotlari</div>
           <div className="ButtonWrapper">
-            {thirds.map((value, index) => {
-              return (
-                <>
-                  <div className="BtnCardWrapper">
-                    <div className="BtnCard">
-                      <div className="ImgWrapper">
-                        <img src={value.image} className="CardImgs" />
+            {loading_pro ? (
+              <>Loading...</>
+            ) : (
+              <>
+                {thirds.map((value, index) => {
+                  return (
+                    <>
+                      <div className="BtnCardWrapper">
+                        {
+                          (value.image,
+                          value.slug,
+                          value.name ? (
+                            <div className="BtnCard">
+                              <div className="ImgWrapper">
+                                <img src={value.image} className="CardImgs" />
+                              </div>
+                              <div className="BtnTextCard">{value.slug}</div>
+                              <div className="BtnTitleCard">{value.name}</div>
+                            </div>
+                          ) : (
+                            <h1>Loading...</h1>
+                          ))
+                        }
                       </div>
-                      <div className="BtnTextCard">{value.slug}</div>
-                      <div className="BtnTitleCard">{value.name}</div>
-                    </div>
-                  </div>
-                </>
-              );
-            })}
+                    </>
+                  );
+                })}
+              </>
+            )}
           </div>
         </div>
       </div>

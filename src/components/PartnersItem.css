@@ -1,11 +1,12 @@
 .Container {
-  padding: 100px;
   margin-top: auto;
-  height: 100vh;
+  height: 1300px;
   width: 100%;
+  padding: 100px;
   background: #e5e5e5;
 }
 .Top {
+  margin-bottom: auto;
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -61,34 +62,43 @@
   background-color: transparent;
 }
 .Body {
+  margin-top: 70px;
   display: flex;
   flex-direction: row;
-  width: 60%;
+  /* width: 60%; */
   height: 500px;
-  /* background-color: green; */
+}
+@media only screen and (max-width: 600px) and (min-width:500px) {
+   .Body{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+  }
 }
 .left {
   display: flex;
   justify-content: center;
   /* align-items: center; */
   /* background-color: greenyellow; */
-  flex: 2;
+  width: 300px;
 }
 .Cards {
+  margin-right: 20px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 274px;
-  height: 274px;
+  width: 234px;
+  height: 234px;
   background: #ffffff;
   border-radius: 27.4451px;
 }
 .right {
-  flex: 5;
-  /* background-color: green; */
+  margin-left: 30px;
+  width: 700px;
 }
 .Title {
-  width: 280px;
+  width: 580px;
   height: 57px;
   font-family: Rubik;
   font-style: normal;
@@ -102,7 +112,7 @@
   margin: 16px 0px;
 }
 .Text {
-  width: 871px;
+  width: 700px;
   height: 76px;
   font-family: Rubik;
   font-style: normal;
@@ -120,14 +130,13 @@
   align-items: center;
   height: fit-content;
   flex-wrap: wrap;
-  /* width: 100%; */
-  background-color: transparent;
-  border: 1px solid red;
-  margin-bottom: 200px;
+  width: 100%;
+  margin-bottom: 500px;
 }
 .BtnTitle {
-  margin-top: 30px;
+  margin-top: -150px;
   margin-bottom: 30px;
+  margin-left: 20px;
   width: 500px;
   height: 57px;
   font-family: Rubik;
@@ -138,60 +147,63 @@
   color: #011a61;
 }
 .BtnTextCard {
+  margin-left: 10px;
+  margin-top: 7px;
   flex: 1;
-  width: 166px;
-  height: 14px;
   font-family: Rubik;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-  line-height: 14px;
   color: #70798b;
   flex: none;
   order: 0;
   flex-grow: 0;
-  margin: 12px 0px;
 }
 .BtnTitleCard {
   flex: 1;
-  width: 243px;
-  height: 21px;
+  margin-top: 10px;
+  margin-left: 10px;
+  /* width: 243px; */
+  /* height: 21px; */
   font-family: Rubik;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 150%;
+  /* line-height: 150%; */
   color: #011a61;
   flex: none;
   order: 1;
   flex-grow: 0;
-  margin: 12px 0px;
+  /* margin: 12px 0px; */
 }
 
 .BtnCard {
   margin-top: 20px;
   height: 200px;
   width: 250px;
-  /* background: #ffffff; */
-  background: yellow;
+  background: #ffffff;
   box-shadow: 16px 24px 24px rgba(200, 200, 200, 0.05);
   border-radius: 12px;
 }
-.CardImg,
+/* .CardImg, */
 .CardImgs {
-  flex: 3;
-  height: 100px;
-  width: 100px;
+  margin-left: 60px;
+  height: 140px;
+  width: 100%;
 }
 .ImgWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex: 3; */
   height: auto;
-  width: 100px;
+  width: 70%;
   overflow: hidden;
-  border: 1px solid red;
+  /* background-color: lawngreen; */
+  /* border: 1px solid red; */
 }
 .BtnCardWrapper {
+  /* border: 1px solid green; */
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: row;
 }
