@@ -120,7 +120,7 @@
   align-items: center;
   height: fit-content;
   flex-wrap: wrap;
-  width: 100%;
+  /* width: 100%; */
   background-color: transparent;
   border: 1px solid red;
   margin-bottom: 200px;
@@ -137,9 +137,41 @@
   line-height: 57px;
   color: #011a61;
 }
+.BtnTextCard {
+  flex: 1;
+  width: 166px;
+  height: 14px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #70798b;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 12px 0px;
+}
+.BtnTitleCard {
+  flex: 1;
+  width: 243px;
+  height: 21px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  color: #011a61;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 12px 0px;
+}
+
 .BtnCard {
-  width: 200px;
-  height: 150px;
+  margin-top: 20px;
+  height: 200px;
+  width: 250px;
   /* background: #ffffff; */
   background: yellow;
   box-shadow: 16px 24px 24px rgba(200, 200, 200, 0.05);
@@ -147,16 +179,17 @@
 }
 .CardImg,
 .CardImgs {
- width: 50px;
- background-color: transparent; 
+  flex: 3;
+  height: 100px;
+  width: 100px;
 }
-.ImgWrapper{
+.ImgWrapper {
   height: auto;
   width: 100px;
   overflow: hidden;
   border: 1px solid red;
 }
-.BtnCardWrapper{
+.BtnCardWrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
