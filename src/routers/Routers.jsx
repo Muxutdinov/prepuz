@@ -14,25 +14,30 @@ import PartnersItem from "../components/PartnersItem";
 
 const Routers = () => {
   return (
-    <Switch>
-      <Route path="/" exact component={Home} />
-      <Redirect from="/category" to="/categories" exact component={Categorys} />
-      <Route path="/categories" exact component={Categorys} />
-      <Route path="/brands" exact component={Brands} />
-      <Route path="/brand-view/:slug/price/:id" exact component={BrandView} />
-      <Route path="/category/:type" exact component={Barchasi} />
-      <Route path="/drugs" exact component={Drugs} />
-      <Route path="/partners" exact component={Hamkor} />
-      {/* <Route path="/partners/:item" exact component={PartnersItem} /> */}
-      {/* <Route path="/item" exact component={PartnersItem} /> */}
-      {/* <Redirect
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Redirect
+          from="/category"
+          to="/categories"
+          exact
+          component={Categorys}
+        />
+        <Route path="/categories" exact component={Categorys} />
+        <Route path="/brands" exact component={Hamkor} />
+        <Route path="/brand-view/:slug/price/:id" exact component={BrandView} />
+        <Route path="/category/:type" exact component={Barchasi} />
+        <Route path="/drugs" exact component={Drugs} />
+        <Route path="/partners" exact component={Hamkor} />
+        {/* <Route path="/partners/:item" exact component={PartnersItem} /> */}
+        {/* <Route path="/item" exact component={PartnersItem} /> */}
+        {/* <Redirect
         from="/categories/tibiy"
         to="/categories/tibbiy"
         exact
         component={Tibbiy}
       /> */}
-      <Route path="/partners/:item" exact component={PartnersItem} />
-    </Switch>
+        <Route path="/partners/:item" exact component={PartnersItem} />
+      </Switch>
   );
 };
 export default Routers;
