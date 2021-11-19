@@ -23,6 +23,8 @@ import {
 } from "./CategorysStyle";
 
 const Categories = () => {
+  const [wait, setWait] = useState(false);
+
   const [first, setFirst] = useState([]);
   useEffect(() => {
     getDrags();
@@ -32,6 +34,7 @@ const Categories = () => {
       .get("https://api.akpharm.uz/api/v1/drug-list/?page=1&lan=uz")
       .then((res) => {
         setFirst(res.data.results);
+        setWait(true);
       })
       .catch((errors) => {
         console.log("test error", errors);
@@ -45,65 +48,71 @@ const Categories = () => {
           <Sahifa />
           <TopWrappertwo>Akpharmdagi maxsulotlar katalogi</TopWrappertwo>
         </Top>
-        <Wrapper>
-          <SidebarWrapper>
-            <NavLink
-              exact
-              className="nav"
-              activeClassName="active"
-              to="/category/type"
-            >
-              <SidebarItem>Barchasi</SidebarItem>
-            </NavLink>
-            <NavLink
-              exact
-              className="nav"
-              activeClassName="active"
-              to="/category/tibbiy"
-            >
-              <SidebarItem>Tibbiy asbob-uskunalar</SidebarItem>
-            </NavLink>
-            <NavLink
-              exact
-              className="nav"
-              activeClassName="active"
-              to="/category/gome"
-            >
-              <SidebarItem>Gomeopatik vositalar</SidebarItem>
-            </NavLink>
-            <NavLink
-              exact
-              className="nav"
-              activeClassName="active"
-              to="/category/otapedik"
-            >
-              <SidebarItem>Otapedik vositalar</SidebarItem>
-            </NavLink>
-            <NavLink
-              exact
-              className="nav"
-              activeClassName="active"
-              to="/category/:yopishqoq"
-            >
-              <SidebarItem>Yopishqoq vositalar va bintlar</SidebarItem>
-            </NavLink>
-          </SidebarWrapper>
-          <BodyWrapper>
-            <BodyCard>
-              {first.map((value, index) => (
-                <Card key={index}>
-                  <ImgWrapper>
-                    <Img1 src={value.image} alt="rasm"></Img1>
-                  </ImgWrapper>
-                  <TitleWrapper>
-                    <MiniText>{value.name}</MiniText>
-                    <Title>{value.category.name}</Title>
-                  </TitleWrapper>
-                </Card>
-              ))}
-            </BodyCard>
-          </BodyWrapper>
-        </Wrapper>
+        {wait ? (
+          <Wrapper>
+            <SidebarWrapper>
+              <NavLink
+                exact
+                className="nav"
+                activeClassName="active"
+                to="/category/type"
+              >
+                <SidebarItem>Barchasi</SidebarItem>
+              </NavLink>
+              <NavLink
+                exact
+                className="nav"
+                activeClassName="active"
+                to="/category/tibbiy"
+              >
+                <SidebarItem>Tibbiy asbob-uskunalar</SidebarItem>
+              </NavLink>
+              <NavLink
+                exact
+                className="nav"
+                activeClassName="active"
+                to="/category/gome"
+              >
+                <SidebarItem>Gomeopatik vositalar</SidebarItem>
+              </NavLink>
+              <NavLink
+                exact
+                className="nav"
+                activeClassName="active"
+                to="/category/otapedik"
+              >
+                <SidebarItem>Otapedik vositalar</SidebarItem>
+              </NavLink>
+              <NavLink
+                exact
+                className="nav"
+                activeClassName="active"
+                to="/category/:yopishqoq"
+              >
+                <SidebarItem>Yopishqoq vositalar va bintlar</SidebarItem>
+              </NavLink>
+            </SidebarWrapper>
+            <BodyWrapper>
+              <BodyCard>
+                {first.map((value, index) => (
+                  <Card key={index}>
+                    <ImgWrapper>
+                      <Img1 src={value.image} alt="rasm"></Img1>
+                    </ImgWrapper>
+                    <TitleWrapper>
+                      <MiniText>{value.name}</MiniText>
+                      <Title>{value.category.name}</Title>
+                    </TitleWrapper>
+                  </Card>
+                ))}
+              </BodyCard>
+            </BodyWrapper>
+          </Wrapper>
+        ) : (
+          <>
+            <h1>Loading...</h1>
+          </>
+        )}
       </Container>
     </>
   );

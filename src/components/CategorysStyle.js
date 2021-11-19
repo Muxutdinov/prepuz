@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { ReactComponent as sahifa } from "../assets/icons/sahifa.svg";
 
 export const Container = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -17,7 +16,7 @@ export const Top = styled.div`
   align-items: center;
 `;
 export const TopWrapperone = styled.div`
-  width: 69px;
+  width: 100px;
   height: 18px;
   font-family: Rubik;
   font-style: normal;
@@ -47,7 +46,6 @@ export const TopWrappertwo = styled.div`
 export const Sahifa = styled(sahifa)`
   height: 8.910531044006348px;
   width: 5.128483295440674px;
-  /* background: #70798B; */
 `;
 export const Wrapper = styled.div`
   margin-top: 50px;
@@ -133,8 +131,12 @@ export const ImgWrapper = styled.div`
   height: 100px;
 `;
 export const SidebarWrapper = styled.div`
-  position: fixed;
-  margin-right : 750px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  margin-left: 200px;
+  /* position: fixed; */
+  /* margin-right: 750px; */
   margin-top: 70px;
   height: 300px;
   width: 170px;

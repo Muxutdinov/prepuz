@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./Hamkor.css";
 import icon from "../assets/icons/sahifa.svg";
 import {
   Container,
+  BigContainer,
   Title,
   Top,
-  CardText,
-  CardWrapper,
   Card,
   Text,
   Img,
@@ -26,28 +24,25 @@ const Hamkor = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="BigContainer">
+    <BigContainer>
       <Top>
         <Title>Asosiy sahifa</Title>
-        <img src={icon} />
+        <Img src={icon} />
         <Text>Hamkorlarimiz</Text>
       </Top>
-      <div className="Container">
-        {/* <CardWrapper> */}
+      <Container>
         {second.map((value, index) => {
           return (
             <Link to="/partners/item">
-              <div key={index} className="Card">
+              <Card key={index} >
                 <Img src={value.logo} />
-              </div>
+              </Card>
             </Link>
           );
         })}
-        {/* </CardWrapper> */}
-      </div>
-    </div>
+      </Container>
+    </BigContainer>
   );
 };
-
 
 export default Hamkor;
