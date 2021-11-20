@@ -1,7 +1,30 @@
 import React, { useState, useEffect } from "react";
-import "./PartnersItem.css";
+// import "./PartnersItem.css";
 import axios from "axios";
 import icon from "../assets/icons/sahifa.svg";
+import {
+  Card,
+  Container,
+  Item1,
+  Item2,
+  Item3,
+  Right,
+  Title,
+  Top,
+  Wrapper,
+  Body,
+  Left,
+  Text,
+  CardImgs,
+  BtnTitle,
+  ButtonWrapper,
+  BtnCardWrapper,
+  BtnCard,
+  ImgWrapper,
+  BtnTextCard,
+  BtnTitleCard,
+  BtnCardAllWrap,
+} from "./PartnersItemStyle";
 
 const PartnersItem = () => {
   const [third, setThird] = useState([]);
@@ -46,76 +69,74 @@ const PartnersItem = () => {
   };
   return (
     <>
-      <div className="Container">
-        <div className="Wrapper">
-          <div className="Top">
-            <div className="item1">Asosiy sahifa</div>
+      <Container>
+        <Wrapper>
+          <Top>
+            <Item1>Asosiy sahifa</Item1>
             <img src={icon} />
-            <div className="item2">Hamkorlarimiz</div>
+            <Item2>Hamkorlarimiz</Item2>
             <img src={icon} />
-            <div className="item3">HEBU MEDICAL</div>
-          </div>
+            <Item3>HEBU MEDICAL</Item3>
+          </Top>
           {loading_pro ? (
             <>Loading...</>
           ) : (
             <>
-              <div className="Body">
-                <div className="left">
-                  <div className="Cards">
+              <Body>
+                <Left>
+                  <Card>
                     <img
                       src={third.logo}
                       alt="Rasm"
                       width="60%"
                       className="CardImg"
                     />
-                  </div>
-                </div>
-                <div className="right">
-                  <div className="Title">
+                  </Card>
+                </Left>
+                <Right>
+                  <Title>
                     {third.name}
                     {/* {third.name ? third.name : <h1>Loading...</h1>} */}
-                    <div className="Text">
+                    <Text>
                       <p
                         dangerouslySetInnerHTML={{
                           __html: third.description,
                         }}
                       />
-                    </div>
-                  </div>
-                </div>
-              </div>
+                    </Text>
+                  </Title>
+                </Right>
+              </Body>
             </>
           )}
-          {setLoading_pros ? (
-            <div className="BtnTitle">Kompaniya mahsulotlari</div>
-          ) : (
-            ""
-          )}
-          <div className="ButtonWrapper">
+          {setLoading_pros ? <BtnTitle>Kompaniya mahsulotlari</BtnTitle> : ""}
+          <ButtonWrapper>
             {loading_pros ? (
               <>Loading...</>
             ) : (
               <>
-                {thirds.map((value, index) => {
-                  return (
-                    <>
-                      <div className="BtnCardWrapper">
-                        <div className="BtnCard">
-                          <div className="ImgWrapper">
-                            <img src={value.image} className="CardImgs" />
-                          </div>
-                          <div className="BtnTextCard">{value.slug}</div>
-                          <div className="BtnTitleCard">{value.name}</div>
-                        </div>
-                      </div>
-                    </>
-                  );
-                })}
+                <BtnCardAllWrap>
+                  {thirds.map((value, index) => {
+                    return (
+                      <>
+                        <BtnCardWrapper>
+                          <BtnCard>
+                            <ImgWrapper>
+                              <CardImgs src={value.image} />
+                            </ImgWrapper>
+                            <BtnTextCard>{value.slug}</BtnTextCard>
+                            <BtnTitleCard>{value.name}</BtnTitleCard>
+                          </BtnCard>
+                        </BtnCardWrapper>
+                      </>
+                    );
+                  })}
+                </BtnCardAllWrap>
               </>
             )}
-          </div>
-        </div>
-      </div>
+          </ButtonWrapper>
+        </Wrapper>
+      </Container>
     </>
   );
 };
